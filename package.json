@@ -17,6 +17,7 @@
     "reactjs",
     "react-component"
   ],
+  "main": "react-component-explorer.js",
   "devDependencies": {
     "babel-core": "~5.8.22",
     "babel-eslint": "^4.0.10",
