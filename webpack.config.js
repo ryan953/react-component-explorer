@@ -10,12 +10,12 @@ module.exports = {
     path: path.join(__dirname),
     filename: 'react-component-explorer.js',
     libraryTarget: 'umd',
-    library: 'ReactComponentExplorer'
+    library: 'ReactComponentExplorer',
   },
 
   externals: {
    'react': 'umd react',
-   'react/addons': 'umd react'
+   'react/addons': 'umd react',
   },
 
   module: {
@@ -25,7 +25,7 @@ module.exports = {
         // Query parameters are passed to node-sass
         loader: 'style!css!sass?outputStyle=expanded&' +
           'includePaths[]=' + (path.resolve(__dirname, './bower_components')) + '&' +
-          'includePaths[]=' + (path.resolve(__dirname, './node_modules'))
+          'includePaths[]=' + (path.resolve(__dirname, './node_modules')),
       },
       {
         test: /(\.js)|(\.jsx)$/,
@@ -33,9 +33,9 @@ module.exports = {
         loader: 'babel-loader',
         query: {
           optional: ['runtime'],
-          stage: 0
-        }
-      }
-    ]
-  }
+          stage: 0,
+        },
+      },
+    ],
+  },
 };

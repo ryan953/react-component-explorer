@@ -19,6 +19,8 @@
 
     "no-alert": 0,
 
+    "comma-dangle": [2, "always-multiline"],
+
     // react
     "react/display-name": 0,
     "react/jsx-boolean-value": 1,
