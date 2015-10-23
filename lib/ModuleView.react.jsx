@@ -16,6 +16,7 @@ export default class ModuleView extends React.Component {
           {moduleContext.examples.map((example) =>
             <li key={example.exampleTitle}>
               <ExampleView example={example} />
+              <hr />
             </li>
           )}
         </ul>

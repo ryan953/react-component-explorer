@@ -1,2 +1,17 @@
 .react-component-explorer {
+  padding: 10px;
+}
+
+.react-component-explorer-navColumn {
+  float: left;
+  width: 20%;
+}
+
+.react-component-explorer-mainColumn {
+  float: right;
+  width: 80%;
+}
+
+.react-component-explorer-codeToggle {
+  float: right;
 }

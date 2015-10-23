@@ -18,9 +18,9 @@ export default class RCE extends React.Component {
     var moduleNames = Object.keys(registry);
 
     return (
-      <div style={{padding: '10'}}>
+      <div className="react-component-explorer">
         <h1>All Module Examples</h1>
-        <div style={{float: 'left', width: '20%'}}>
+        <div className="react-component-explorer-navColumn">
           <ul>
             {moduleNames.map((name, index) =>
               <li key={'module_' + index}>
@@ -34,10 +34,10 @@ export default class RCE extends React.Component {
             )}
           </ul>
         </div>
-        <div style={{float: 'right', width: '80%'}}>
+        <div className="react-component-explorer-mainColumn">
           {activeModule && registry[activeModule]
-              ? <ModuleView moduleContext={registry[activeModule]} />
-              : <span>Pick a module</span>
+            ? <ModuleView moduleContext={registry[activeModule]} />
+            : <span>Pick a module</span>
           }
         </div>
       </div>

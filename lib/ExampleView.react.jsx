@@ -20,7 +20,12 @@ export default class ExampleView extends React.Component {
     var {example} = this.props;
     return (
       <div className="react-component-explorer-example">
-        <a href="#" onClick={this.onClick} style={{float: 'right'}}>Toggle Code</a>
+        <a
+          href="#"
+          onClick={this.onClick}
+          className="react-component-explorer-codeToggle">
+          Toggle Code
+        </a>
         <h3>{example.exampleTitle}</h3>
         {example.exampleRender()}
         {this.state.showCode ? <pre>Code Here</pre> : null}
