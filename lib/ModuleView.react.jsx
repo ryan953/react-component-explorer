@@ -1,11 +1,6 @@
 import React from 'react';
 import ExampleView from './ExampleView.react.jsx';
 
-function toKey(string) {
-  // TODO do i need this transform? is `return string` good enough?
-  return string.replace(' ', '');
-}
-
 export default class ModuleView extends React.Component {
 
   render() {
@@ -13,13 +8,13 @@ export default class ModuleView extends React.Component {
 
     return (
       <div
-        key={toKey(moduleContext.moduleName)}
+        key={moduleContext.moduleName}
         className="react-component-explorer-module">
         <h3>{moduleContext.moduleName}</h3>
         <hr />
         <ul>
           {moduleContext.examples.map((example) =>
-            <li key={toKey(example.exampleTitle)}>
+            <li key={example.exampleTitle}>
               <ExampleView example={example} />
             </li>
           )}
@@ -27,4 +22,5 @@ export default class ModuleView extends React.Component {
       </div>
     );
   }
+
 }
