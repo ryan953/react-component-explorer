@@ -21,8 +21,8 @@ export default class ExampleView extends React.Component {
     return (
       <div className="react-component-explorer-example">
         <a href="#" onClick={this.onClick} style={{float: 'right'}}>Toggle Code</a>
-        <h3>{example.title}</h3>
-        {example.render()}
+        <h3>{example.exampleTitle}</h3>
+        {example.exampleRender()}
         {this.state.showCode ? <pre>Code Here</pre> : null}
       </div>
     );
