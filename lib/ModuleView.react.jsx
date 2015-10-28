@@ -1,5 +1,5 @@
-import React from 'react';
 import ExampleView from './ExampleView.react.jsx';
+import React from 'react';
 
 export default class ModuleView extends React.Component {
 

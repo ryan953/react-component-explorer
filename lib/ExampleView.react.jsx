@@ -5,30 +5,30 @@ export default class ExampleView extends React.Component {
     super();
 
     this.state = {
-      showCode: false,
+      showCode: true,
     };
-
-    this.onClick = this.onClick.bind(this);
-  }
-
-  onClick(e) {
-    e.preventDefault();
-    this.setState({showCode: !this.state.showCode});
   }
 
   render() {
     var {example} = this.props;
+
     return (
       <div className="react-component-explorer-example">
-        <a
-          href="#"
-          onClick={this.onClick}
-          className="react-component-explorer-codeToggle">
-          Toggle Code
-        </a>
-        <h3>{example.exampleTitle}</h3>
+        <div className="react-component-explorer-codeToggle">
+          <a href="#" onClick={(e) => {
+              e.preventDefault();
+              this.setState({showCode: !this.state.showCode});
+            }}>
+            Toggle Code
+          </a>
+        </div>
+        <h3 className="react-component-explorer-exampleTitle">
+          {example.exampleTitle}
+        </h3>
         {example.exampleRender()}
-        {this.state.showCode ? <pre>Code Here</pre> : null}
+        <div className="react-component-explorer-code">
+          {this.state.showCode ? <pre>{example.exampleRaw}</pre> : null}
+        </div>
       </div>
     );
   }
