@@ -15,14 +15,15 @@ export default class RCE extends React.Component {
     var {activeModule} = this.state;
     var {registry} = this.props;
 
-    var moduleNames = Object.keys(registry);
+    var contextNames = registry.getContextNames();
+    var activeContext = registry.getContextByName(activeModule);
 
     return (
       <div className="react-component-explorer">
         <h1>All Module Examples</h1>
         <div className="react-component-explorer-navColumn">
           <ul>
-            {moduleNames.map((name, index) =>
+            {contextNames.map((name, index) =>
               <li key={'module_' + index}>
                 <a href="#" onClick={(e)=> {
                   e.preventDefault();
@@ -35,8 +36,8 @@ export default class RCE extends React.Component {
           </ul>
         </div>
         <div className="react-component-explorer-mainColumn">
-          {activeModule && registry[activeModule]
-            ? <ModuleView moduleContext={registry[activeModule]} />
+          {activeContext
+            ? <ModuleView moduleContext={activeContext} />
             : <span>Pick a module</span>
           }
         </div>
@@ -45,4 +46,3 @@ export default class RCE extends React.Component {
   }
 
 }
-

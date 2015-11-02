@@ -5,15 +5,16 @@ export default class ModuleView extends React.Component {
 
   render() {
     var {moduleContext} = this.props;
+    var name = moduleContext.getName();
 
     return (
       <div
-        key={moduleContext.moduleName}
+        key={name}
         className="react-component-explorer-module">
-        <h3>{moduleContext.moduleName}</h3>
+        <h3>{name}</h3>
         <hr />
         <ul>
-          {moduleContext.examples.map((example) =>
+          {moduleContext.getExamples().map((example) =>
             <li key={example.exampleTitle}>
               <ExampleView example={example} />
               <hr />

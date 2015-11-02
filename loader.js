@@ -51,7 +51,7 @@ function calleeIsLocalContext(callee) {
     //   return false;
     case 'MemberExpression':
       return callee.object.name === localModuleContextParamName &&
-        callee.property.name === 'example';
+        callee.property.name === 'addExample';
     default:
       return false;
   }
@@ -88,8 +88,4 @@ module.exports = function(source, map) {
   console.log("\nNew Code:\n" + newCode);
 
   this.callback(null, newCode, map);
-};
-
-module.exports.pitch = function(remainingRequest, precedingRequest, data) {
-
 };
