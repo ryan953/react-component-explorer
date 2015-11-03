@@ -4,18 +4,26 @@ var path = require('path');
 
 module.exports = {
   context: path.join(__dirname),
-  entry: './lib/index.js',
+
+  target: 'node',
+  entry: {
+    web: './lib/web.js',
+    'react-component-explorer': './lib/node.js',
+  },
 
   output: {
     path: path.join(__dirname),
-    filename: 'react-component-explorer.js',
+    filename: '[name].js',
     libraryTarget: 'umd',
-    library: 'ReactComponentExplorer',
+    // library: 'ReactComponentExplorer',
+    // libraryTarget: 'commonjs2',
   },
 
   externals: {
    'react': 'umd react',
    'react/addons': 'umd react',
+   'recast': 'umd recast',
+   'jscodeshift': 'umd jscodeshift',
   },
 
   module: {
@@ -31,10 +39,10 @@ module.exports = {
         test: /(\.js)|(\.jsx)$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
-        query: {
-          optional: ['runtime'],
-          stage: 0,
-        },
+        // query: {
+        //   optional: ['runtime'],
+        //   stage: 0,
+        // },
       },
     ],
   },
