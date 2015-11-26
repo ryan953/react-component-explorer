@@ -7,16 +7,13 @@ module.exports = {
 
   target: 'node',
   entry: {
-    web: './lib/web.js',
-    'react-component-explorer': './lib/node.js',
+    'rce': './lib/component/main.js',
   },
 
   output: {
     path: path.join(__dirname),
-    filename: '[name].js',
+    filename: 'dist/[name].js',
     libraryTarget: 'umd',
-    // library: 'ReactComponentExplorer',
-    // libraryTarget: 'commonjs2',
   },
 
   externals: {
@@ -29,9 +26,9 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.scss$/,
+        test: /\.css$/,
         // Query parameters are passed to node-sass
-        loader: 'style!css!sass?outputStyle=expanded&' +
+        loader: 'style!css?outputStyle=expanded&' +
           'includePaths[]=' + (path.resolve(__dirname, './bower_components')) + '&' +
           'includePaths[]=' + (path.resolve(__dirname, './node_modules')),
       },
