@@ -1,5 +1,6 @@
 import ModuleView from './ModuleView.react.jsx';
 import React from 'react';
+import Scrollable from './Scrollable.react.jsx';
 
 export default class RCE extends React.Component {
 
@@ -22,24 +23,28 @@ export default class RCE extends React.Component {
       <div className="react-component-explorer">
         <h1>All Module Examples</h1>
         <div className="react-component-explorer-navColumn">
-          <ul>
-            {contextNames.map((name, index) =>
-              <li key={'module_' + index}>
-                <a href="#" onClick={(e)=> {
-                  e.preventDefault();
-                  this.setState({activeModule: name});
-                }}>
-                  {name}
-                </a>
-              </li>
-            )}
-          </ul>
+          <Scrollable>
+            <ul>
+              {contextNames.map((name, index) =>
+                <li key={'module_' + index}>
+                  <a href="#" onClick={(e)=> {
+                    e.preventDefault();
+                    this.setState({activeModule: name});
+                  }}>
+                    {name}
+                  </a>
+                </li>
+              )}
+            </ul>
+          </Scrollable>
         </div>
         <div className="react-component-explorer-mainColumn">
-          {activeContext
-            ? <ModuleView moduleContext={activeContext} />
-            : <span>Pick a module</span>
-          }
+          <Scrollable>
+            {activeContext
+              ? <ModuleView moduleContext={activeContext} />
+              : <span>Pick a module</span>
+            }
+          </Scrollable>
         </div>
       </div>
     );
