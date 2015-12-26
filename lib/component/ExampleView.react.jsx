@@ -25,7 +25,9 @@ export default class ExampleView extends React.Component {
         <h3 className="react-component-explorer-exampleTitle">
           {example.exampleTitle}
         </h3>
-        {example.exampleRender()}
+        <div className="react-component-explorer-example-container">
+          {example.exampleRender()}
+        </div>
         <div className="react-component-explorer-code">
           {this.state.showCode ? <pre>{example.exampleRaw}</pre> : null}
         </div>

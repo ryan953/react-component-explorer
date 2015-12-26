@@ -12,12 +12,10 @@ export default class ModuleView extends React.Component {
         key={name}
         className="react-component-explorer-module">
         <h3>{name}</h3>
-        <hr />
         <ul>
           {moduleContext.getExamples().map((example) =>
-            <li key={example.exampleTitle}>
+            <li className={'react-component-explorer-module-item'} key={example.exampleTitle}>
               <ExampleView example={example} />
-              <hr />
             </li>
           )}
         </ul>

@@ -1,15 +1,26 @@
 .react-component-explorer {
   padding: 10px;
+  height: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .react-component-explorer-navColumn {
   float: left;
   width: 20%;
+  height: 100%;
+  position: relative;
 }
 
 .react-component-explorer-mainColumn {
   float: right;
   width: 80%;
+  height: 100%;
+  position: relative;
+}
+
+.react-component-explorer-module-item {
+  border-top: 1px solid white;
 }
 
 .react-component-explorer-codeToggle {
@@ -20,6 +31,10 @@
   margin: 10px 0;
 }
 
-.react-component-explorer-code pre {
+.react-component-explorer-example-container {
+  margin: 10px 0;
+}
+
+.react-component-explorer-code {
   margin: 10px 0;
 }
