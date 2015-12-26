@@ -1,6 +1,6 @@
 /* jshint node: true */
 var path = require('path');
-
+var webpack = require('webpack');
 
 module.exports = {
   context: path.join(__dirname),
@@ -21,14 +21,20 @@ module.exports = {
    'react/addons': 'umd react',
   },
 
+  plugins: [
+    new webpack.DefinePlugin({
+      __DEV__: JSON.stringify(process.env.NODE_ENV == 'production'),
+    }),
+  ],
+
   module: {
     loaders: [
       {
         test: /\.css$/,
         // Query parameters are passed to node-sass
-        loader: 'style!css?outputStyle=expanded&' +
-          'includePaths[]=' + (path.resolve(__dirname, './bower_components')) + '&' +
-          'includePaths[]=' + (path.resolve(__dirname, './node_modules')),
+        loader: 'style!css?outputStyle=expanded' +
+          '&includePaths[]=' + (path.resolve(__dirname, './bower_components')) +
+          '&includePaths[]=' + (path.resolve(__dirname, './node_modules')),
       },
       {
         test: /(\.js)|(\.jsx)$/,
