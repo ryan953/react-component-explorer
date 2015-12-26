@@ -19,8 +19,6 @@ module.exports = {
   externals: {
    'react': 'umd react',
    'react/addons': 'umd react',
-   'recast': 'umd recast',
-   'jscodeshift': 'umd jscodeshift',
   },
 
   module: {
