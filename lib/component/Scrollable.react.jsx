@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 
 import {
   // Fixed,
@@ -23,8 +24,8 @@ var Scrollable = React.createClass({
   },
 
   updateScrollFade() {
-    var scroller = React.findDOMNode(this.refs.scroller);
-    var wrapper = React.findDOMNode(this.refs.wrapper);
+    var scroller = ReactDOM.findDOMNode(this.refs.scroller);
+    var wrapper = ReactDOM.findDOMNode(this.refs.wrapper);
     var scrollTop = scroller.scrollTop;
     var maxScroll = wrapper.offsetHeight - scroller.offsetHeight;
 
