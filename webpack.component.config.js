@@ -17,8 +17,9 @@ module.exports = {
   },
 
   externals: {
-   'react': 'umd react',
-   'react/addons': 'umd react',
+    'react': 'umd react',
+    'react-dom': 'umd react-dom',
+    'react/addons': 'umd react',
   },
 
   plugins: [
