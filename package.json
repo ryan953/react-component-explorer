@@ -5,11 +5,11 @@
   "scripts": {
     "test": "eslint lib/ spec/ && ./node_modules/karma/bin/karma start karma.conf.js",
     "watch-test": "./node_modules/karma/bin/karma start karma.conf.js --auto-watch --no-single-run",
-    "build": "webpack --config webpack.component.config.js -p && webpack --config webpack.loader.config.js -p",
+    "build": "make build",
     "watch": "webpack -p --watch",
     "rename-css-bower-dependencies": "find bower_components -name '*.css' | sed -e 'p;s/.css$/.scss/' | xargs -n2 mv",
     "start": "webpack-dev-server --inline --hot",
-    "postinstall": "bower install"
+    "postinstall": "npm run-script build"
   },
   "author": "",
   "license": "BSD",
@@ -40,7 +40,7 @@
     "karma-sourcemap-loader": "~0.3.5",
     "karma-webpack": "~1.7.0",
     "node-sass": "3.4.2",
-    "phantomjs": ">=1.9",
+    "phantomjs-prebuilt": ">=1.9",
     "recast": "^0.10.39",
     "sass-loader": "3.1.2",
     "style-loader": "0.13.0",
@@ -50,7 +50,10 @@
   "dependencies": {
     "classnames": "^2.1.3",
     "babel-runtime": "6.2.0",
-    "react": "0.14.3",
     "react-layout-pane": "^0.1.10"
+  },
+  "peerDependencies": {
+    "react": "~0.14.3",
+    "react-dom": "~0.14.3"
   }
 }
